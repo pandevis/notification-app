@@ -1,5 +1,12 @@
-<div style="text-align:center">
-  <h1>Welcome to the Angular Notification App!</h1>
-  <button (click)="requestPermission()">Send Notification</button>
+<div class="container mt-5">
+  <h1>Notification File Upload App</h1>
+  <input type="file" (change)="onFileSelected($event)" accept=".txt"/>
+  
+  <div *ngIf="fileUploaded" class="mt-3">
+    <p><strong>File Name:</strong> {{ fileName }}</p>
+    <p><strong>File Content:</strong></p>
+    <pre>{{ fileContent }}</pre>
+  </div>
 </div>
+
 <router-outlet />
